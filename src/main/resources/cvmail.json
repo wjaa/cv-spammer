@@ -1,0 +1,9 @@
+{
+	emails:['wag182@gmail.com'],
+	name:'Wagner Araujo',
+	from:'wagner.wjaa@gmail.com',
+	title:'titulo do email',body:'<html><body><b>corpo do email</b></body></html>',
+	cvPath:'/home/wagner/Documentos/notafiscal.pdf',
+	cvName:'curriculo.pdf',
+ 	serverConfig:{smtp:'smtp.gmail.com',port:465,user:'wagner.wjaa@gmail.com',pass:'*456852*',ssl:true}
+}
