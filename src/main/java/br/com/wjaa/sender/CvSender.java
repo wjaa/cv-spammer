@@ -3,6 +3,7 @@ package br.com.wjaa.sender;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
@@ -41,10 +42,12 @@ public class CvSender {
 			mail.setBoolHasAttachments(true);
 			mail.setHtmlMsg(p.getBody());
 			mail.setSubject(p.getTitle());
-			EmailAttachment ea = new EmailAttachment();
-			ea.setPath(p.getCvPath());
-			ea.setName(p.getCvName());
-			mail.attach(ea);
+			if ( StringUtils.isNotBlank(p.getCvPath()) ){
+				EmailAttachment ea = new EmailAttachment();
+				ea.setPath(p.getCvPath());
+				ea.setName(p.getCvName());
+				mail.attach(ea);
+			}
 			mail.setSSL(new Boolean (sc.getSsl()));
 			
 			mail.send();
